@@ -9,7 +9,7 @@ const Search = React.memo((props) => {
     <section className="search">
       <Card>
         <div className="search-input">
-          <label>جست و جو</label>
+          <label>Search</label>
           <input type="text" />
         </div>
       </Card>
