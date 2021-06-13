@@ -18,11 +18,11 @@ const inputState = useState({title:'' ,amount:''})
         <form onSubmit={submitHandler}>
           <div className="form-control">
             <label htmlFor="title">Title</label>
-            <input type="text" id="title" value={inputState[0].title} onChange={(event)=>inputState[1]({title:event.target.value})}  />
+            <input type="text" id="title" value={inputState[0].title} onChange={(event)=>inputState[1]({title:event.target.value , amount:inputState[0].amount})}  />
           </div>
           <div className="form-control">
             <label htmlFor="amount">Amount</label>
-            <input type="number" id="amount" value={inputState[0].amount} onChange={(event)=>inputState[1]({amount:event.target.value})}/>
+            <input type="number" id="amount" value={inputState[0].amount} onChange={(event)=>inputState[1]({amount:event.target.value , title:inputState[0].title} )}/>
           </div>
           <div className="product-form__actions">
             <button type="submit">Add</button>
