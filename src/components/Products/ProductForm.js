@@ -6,7 +6,8 @@ import './ProductForm.css'
 
 const ProductForm = React.memo((props) => {
 
-const [inputState,setInputState] = useState({title:'' ,amount:''})
+const [title,setTitle] = useState('')
+const [amount,setAmount] = useState('')
 
   const submitHandler = (event) => {
     event.preventDefault()
@@ -18,11 +19,11 @@ const [inputState,setInputState] = useState({title:'' ,amount:''})
         <form onSubmit={submitHandler}>
           <div className="form-control">
             <label htmlFor="title">Title</label>
-            <input type="text" id="title" value={inputState.title} onChange={(event)=>setInputState({title:event.target.value , amount:inputState.amount})}  />
+            <input type="text" id="title" value={title} onChange={(event)=>setTitle(event.target.value)}  />
           </div>
           <div className="form-control">
             <label htmlFor="amount">Amount</label>
-            <input type="number" id="amount" value={inputState.amount} onChange={(event)=>setInputState({amount:event.target.value , title:inputState.title} )}/>
+            <input type="number" id="amount" value={amount} onChange={(event)=>setAmount(event.target.value )}/>
           </div>
           <div className="product-form__actions">
             <button type="submit">Add</button>
