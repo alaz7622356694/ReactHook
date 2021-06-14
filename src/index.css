@@ -5,7 +5,8 @@
 html,
 body {
   margin: 0;
-  direction: rtl;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ 
 }
 
 button {
