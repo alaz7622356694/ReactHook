@@ -11,6 +11,7 @@ const [amount,setAmount] = useState('')
 
   const submitHandler = (event) => {
     event.preventDefault()
+    props.onAddProduct({title:title , amount:amount})
   }
 
   return (
