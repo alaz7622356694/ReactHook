@@ -1,4 +1,4 @@
-import React, {useState , useEffect, useCallback} from 'react'
+import React, {useState ,  useCallback} from 'react'
 
 import ProductForm from './ProductForm'
 import Search from './Search'
@@ -6,24 +6,7 @@ import ProductList from './ProductList'
 
 const Products=()=> {
   const [products,setProducts]=useState([])
-  useEffect(  ()=>{
-
-    fetch('https://jsonplaceholder.typicode.com/posts').then
-   ((response)=> {return response.json()}).then((responseData)=>{
-const loadedProducts=[]
-for(const item in responseData){
-  loadedProducts.push({
-    id:item,
-    title:responseData[item].title,
-    amount:responseData[item].amount,
-  })
-}
-
-setProducts(loadedProducts)
-
-   })
-
-   } , [] )
+  
 
 
 
