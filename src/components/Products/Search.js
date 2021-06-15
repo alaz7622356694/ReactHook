@@ -1,7 +1,9 @@
 import React from 'react'
 import Card from '../UI/Card'
-import {useState , useEffect ,useRef} from 'react'
+import {useState , useEffect ,useRef } from 'react'
 import './Search.css'
+
+
 
 const Search = React.memo((props) => {
 
@@ -17,7 +19,7 @@ const {onLoadProducts}=props
       if(searchItem === inputRef.current.value){
         
       const query= searchItem.length===0? '' :
-      `?orderBy="title"&equalTo="${searchItem}"`
+      `?equalTo="${searchItem}"`
   
   
       fetch('https://jsonplaceholder.typicode.com/posts' + query).then
@@ -31,7 +33,7 @@ const {onLoadProducts}=props
      })
    }
    
-  onLoadProducts(loadedProducts)
+  onLoadProducts(loadedProducts.slice(1,4))
       })
       }
 
