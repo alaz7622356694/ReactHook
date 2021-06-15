@@ -1,4 +1,4 @@
-import React, {useState , useEffect} from 'react'
+import React, {useState , useEffect, useCallback} from 'react'
 
 import ProductForm from './ProductForm'
 import Search from './Search'
@@ -27,6 +27,9 @@ setProducts(loadedProducts)
 
 
 
+const searchProductHandler=useCallback((items)=>{
+  setProducts(items)},[])
+
 
 
   const addProductHandler=(item)=>{
@@ -54,7 +57,7 @@ setProducts(loadedProducts)
     <div className="App">
       <ProductForm onAddProduct={addProductHandler}/>
       <section>
-        <Search />
+        <Search onLoadProducts={searchProductHandler} />
         <ProductList products={products} onRemoveItem={()=>{}} />
       </section>
 
